@@ -6,10 +6,10 @@ public class AudioManager : MonoBehaviour
 {
     public AudioClip[] music;
     public AudioClip[] sound;
+    public AudioSource sourceEffects;
     public AudioSource sourceMusic;
-    public AudioSource sourceSFX;
-    public float musicVolume;
-    public float sfxVolume;
+    //public float musicVolume;
+    //public float sfxVolume;
     public AudioClip defaultClip;
 
 
@@ -29,13 +29,13 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string clipName)
     {
-        sourceSFX.PlayOneShot(GetSound(clipName), sfxVolume);
+        sourceEffects.PlayOneShot(GetSound(clipName));
     }
 
     public void PlayMusic(int track)
     {
         sourceMusic.clip = music[track];
-        sourceMusic.volume = musicVolume;
+      //  sourceMusic.volume = musicVolume;
         sourceMusic.loop = true;
         sourceMusic.Play();
     }

@@ -41,15 +41,21 @@
 
 		if (abs(IN.worldNormal.y) > 0.5)
 		{
-			o.Albedo = tex2D(_MainTexY, IN.worldPos.xz * _MainTexY_ST.xy + _MainTexY_ST.zw) * _ColorY * _EmissiveY;
+			fixed4 c = tex2D(_MainTexY, IN.worldPos.xz * _MainTexY_ST.xy + _MainTexY_ST.zw) * _ColorY * _EmissiveY;
+			o.Albedo = c.rgb;
+			o.Alpha = c.a;
 		}
 		else if (abs(IN.worldNormal.x) > 0.5)
 		{
-			o.Albedo = tex2D(_MainTexX, IN.worldPos.yz * _MainTexX_ST.xy + _MainTexX_ST.zw) * _ColorX * _EmissiveX;
+			fixed4 c = tex2D(_MainTexX, IN.worldPos.yz * _MainTexX_ST.xy + _MainTexX_ST.zw) * _ColorX * _EmissiveX;
+			o.Albedo = c.rgb;
+			o.Alpha = c.a;
 		}
 		else
 		{
-			o.Albedo = tex2D(_MainTexZ, IN.worldPos.xy * _MainTexZ_ST.xy + _MainTexZ_ST.zw) * _ColorZ * _EmissiveZ;
+			fixed4 c = tex2D(_MainTexZ, IN.worldPos.xy * _MainTexZ_ST.xy + _MainTexZ_ST.zw) * _ColorZ * _EmissiveZ;
+			o.Albedo = c.rgb;
+			o.Alpha = c.a;
 		}
 
 		o.Emission = o.Albedo;

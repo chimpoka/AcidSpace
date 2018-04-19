@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameMode { Play, Pause}
+public enum MoveControl { Touchscreen, Accelerometer}
 
 public class Controller : MonoBehaviour
 {
-    static public GameMode mode;
+    static public GameMode gameMode;
+    static public MoveControl moveControl;
     static public float score;
-    static public float bestScore;
+    static public float bestScoreTouchscreen;
+    static public float bestScoreAccelerometer;
     public bool startFromCheckpoint = true;
     public int track = 0;
 
@@ -27,25 +30,30 @@ public class Controller : MonoBehaviour
 
     private void Awake()
     {
-        //If there is already an instance of this class, then remove
-        if (instance) { DestroyImmediate(this); return; }
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        //Assign this instance as singleton
         instance = this;
         DontDestroyOnLoad(gameObject);
-        DataManager.load();
+        DataManager.Load();
     }
 
     private void Start()
     {
         GetComponent<AudioManager>().PlayMusic(track);
-        HUD.Instance.ShowEndGameMenu();
     }
 
     private void Update()
     {
-        score = Mathf.Floor(GameObject.FindGameObjectWithTag("Player").transform.position.x);
+        if (gameMode == GameMode.Play)
+            score = Mathf.Floor(GameObject.FindGameObjectWithTag("Player").transform.position.x);
     }
 
-
+    private void OnApplicationQuit()
+    {
+        DataManager.Save();
+    }
 }
