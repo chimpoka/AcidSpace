@@ -11,11 +11,7 @@ public class RocketMobile : MonoBehaviour
     public float startPosY = 8.2f;
     public float maxAngle = 45f;
     public int checkPoint = 200;
-    [Range(0, 1)]
-    public float decelerationPower;
-    public float decelerationDuration;
-    public float decelerationTime;
-    public float invulnerabilityDuration;
+   
 
 
     [Header("TouchPad Movement Settings")]
@@ -27,10 +23,7 @@ public class RocketMobile : MonoBehaviour
 
     [Header("Debug")]
     public float startPosX;
-    public float decelerationScore;
-    public bool isRocketSlow;
-    public float invulnerabilityScore;
-    public bool isRocketInvulnerable;
+ 
 
     private int changeEnvironment = 100;
     private bool checkPointDone = false;
@@ -39,7 +32,7 @@ public class RocketMobile : MonoBehaviour
     private float speedPerFrame_y = 0;
     private float bestScore;
     private float speed;
-    private float deltaTime;
+    
    
     
 
@@ -67,44 +60,16 @@ public class RocketMobile : MonoBehaviour
 
             CheckPoint();
 
-            if (isRocketSlow)
-                DoDeceleration();
-
-            if (isRocketInvulnerable)
-                DoInvulnerability();
+           
             
         }
     }
 
-    private void DoDeceleration()
-    {
-        if (Controller.score >= decelerationScore + decelerationDuration)
-        {
-            Time.timeScale = Mathf.Lerp(1.0f, decelerationPower, deltaTime / decelerationTime);
-            deltaTime -= Time.deltaTime;
-
-            if (deltaTime <= 0)
-                isRocketSlow = false;
-        }
-        else
-        {
-            if (deltaTime <= decelerationTime)
-            {
-                Time.timeScale = Mathf.Lerp(1.0f, decelerationPower, deltaTime / decelerationTime);
-                deltaTime += Time.deltaTime;
-            }
-        }
-    }
-
-    private void DoInvulnerability()
-    {
-        if (Controller.score >= invulnerabilityScore + invulnerabilityDuration)
-            isRocketInvulnerable = false;
-    }
+   
 
     private void OnTriggerStay(Collider other)
     {
-        if ((Controller.gameMode == GameMode.Play) && (isRocketInvulnerable == false))
+        if ((Controller.gameMode == GameMode.Play) && (GetComponent<RocketEffects>().isRocketInvulnerable == false))
             Die();
     }
 
@@ -143,7 +108,9 @@ public class RocketMobile : MonoBehaviour
             transform.position = new Vector3(0, startPosY, transform.position.z);
 
         Time.timeScale = 1.0f;
-        isRocketSlow = false;
+        GetComponent<RocketEffects>().isRocketSlow = false;
+        GetComponent<RocketEffects>().isRocketInvulnerable = false;
+        GetComponent<RocketEffects>().shield.SetActive(false);
 
         speed = startSpeed;
     }
@@ -153,7 +120,15 @@ public class RocketMobile : MonoBehaviour
         if ((Mathf.Floor(transform.position.x) % checkPoint == 0) && (transform.position.x != 0) && (checkPointDone == false))
         {
             checkPointDone = true;
-            GetComponentInChildren<Animator>().SetTrigger("CheckPoint");
+
+            Animator[] animators = GetComponentsInChildren<Animator>();
+            foreach (Animator anim in animators)
+            {
+                if (anim.name == "Ship")
+                    anim.SetTrigger("CheckPoint");
+            }
+
+
             particleCheckpoint.Play();
             Controller.Instance.GetComponent<AudioManager>().PlaySound("CheckPoint");
         }
@@ -188,6 +163,7 @@ public class RocketMobile : MonoBehaviour
 
         particleExplosion.Play();
         Controller.Instance.GetComponent<AudioManager>().PlaySound("Explosion");
+        GetComponent<RocketEffects>().isRocketInvulnerable = false;
 
         HUD.Instance.ShowEndGameMenu();
         Controller.gameMode = GameMode.Pause;

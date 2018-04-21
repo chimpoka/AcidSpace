@@ -232,13 +232,15 @@ public class HUD : MonoBehaviour
 
     public void onDecelerationButtonClick()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMobile>().isRocketSlow = true;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMobile>().decelerationScore = Controller.score;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<RocketEffects>().isRocketSlow = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<RocketEffects>().slowScore = Controller.score;
+
+       
     }
 
     public void onInvulnerabilityClick()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMobile>().isRocketInvulnerable = true;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMobile>().invulnerabilityScore = Controller.score;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<RocketEffects>().isRocketInvulnerable = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<RocketEffects>().invulnerabilityScore = Controller.score;
     }
 }
