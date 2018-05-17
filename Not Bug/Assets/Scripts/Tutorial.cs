@@ -114,27 +114,25 @@ public class Tutorial : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("1");
         if (IsTutorial() && lifeCheck == false)
         {
+            Debug.Log("2");
             life.SetActive(true);
             GetComponent<RocketMobile>().StopGame();
             if (life.activeSelf == true && Input.GetMouseButtonDown(0) && Input.mousePosition.y < Screen.height * 0.81)
             {
+                Debug.Log("3");
                 life.SetActive(false);
                 if (checkpointChecked == true)
                 {
+                    Debug.Log("4");
                     if (IsTouchscreenTutorial())
                         Controller.firstPlayTouchscreen = 0;
                     else if (IsAccelerometerTutorial())
                         Controller.firstPlayAccelerometer = 0;
                 }
-                //else
-                //{
-                //    if (IsTouchscreenTutorial())
-                //        FirstStartGameTouchscreen();
-                //    else if (IsAccelerometerTutorial())
-                //        FirstStartGameAccelerometer();
-                //}
+                Debug.Log("5");
                 lifeCheck = true;
                 GetComponent<RocketMobile>().Die();
                 Debug.Log(Controller.firstPlayTouchscreen);

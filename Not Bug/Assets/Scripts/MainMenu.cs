@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour {
 
     public float fadingTime = 0.8f;
+    public Image completedImageTouchscreen;
+    public Image completedImageAccelerometer;
+
 
     private Fading fading;
 
@@ -31,6 +34,18 @@ public class MainMenu : MonoBehaviour {
     public void onQuitClick()
     {
         Application.Quit();
+    }
+
+
+
+    // Play button
+
+    public void onPlayButtonClick()
+    {
+        if (Controller.completedTouchscreen == 1)
+            completedImageTouchscreen.enabled = true;
+        else if (Controller.completedAccelerometer == 1)
+            completedImageAccelerometer.enabled = true;
     }
 
 

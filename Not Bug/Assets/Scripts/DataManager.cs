@@ -38,7 +38,7 @@ public class DataManager : MonoBehaviour
         Controller.firstPlayAccelerometer = PlayerPrefs.GetInt("firstPlayAccelerometer", 1);
     }
 
-    static public void SaveLoadNewGame()
+    static public void SaveNewGame()
     {
         PlayerPrefs.SetInt("bestScoreTouchscreen", 0);
         PlayerPrefs.SetInt("bestScoreAccelerometer", 0);

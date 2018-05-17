@@ -21,8 +21,8 @@ public class RocketMobile : MonoBehaviour
     public float rotationSmoothing = 0.1f;
     public float rotationPower = 2f;
 
-    [Header("Debug")]
-    public float startPosX;
+    //[Header("Debug")]
+    //public float startPosX;
  
 
     private int changeEnvironment = 100;
@@ -107,12 +107,12 @@ public class RocketMobile : MonoBehaviour
 
         if (Controller.Instance.startFromCheckpoint == true)
         {
-            #if UNITY_EDITOR
-                        transform.position = new Vector3(startPosX, startPosY, transform.position.z);
-                        #endif
-            #if !UNITY_EDITOR
+            //#if UNITY_EDITOR
+            //    transform.position = new Vector3(startPosX, startPosY, transform.position.z);
+            //#endif
+            //#if !UNITY_EDITOR
                 transform.position = new Vector3(currentCheckPoint / checkPoint * checkPoint, startPosY, transform.position.z);
-            #endif
+            //#endif
         }
         else
             transform.position = new Vector3(0, startPosY, transform.position.z);
