@@ -149,10 +149,14 @@ public class RocketMobile : MonoBehaviour
             if (Controller.moveControl == MoveControl.Touchscreen)
             {
                 Controller.completedTouchscreen = 1;
+                Controller.bestScoreTouchscreen = Controller.Score;
+                Controller.checkpointTouchscreen = 0;
             }
             else if (Controller.moveControl == MoveControl.Accelerometer)
             {
                 Controller.completedAccelerometer = 1;
+                Controller.bestScoreAccelerometer = Controller.Score;
+                Controller.checkpointAccelerometer = 0;
             }
 
             GetComponent<RocketEffects>().isRocketSlow = true;
