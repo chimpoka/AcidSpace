@@ -148,8 +148,8 @@ public class MainMenu : MonoBehaviour {
 
     // Debug
 
-    public void onNewGameDebugClick()
-    {
-        DataManager.SaveLoadNewGame();
-    }
+    //public void onNewGameDebugClick()
+    //{
+    //    DataManager.SaveLoadNewGame();
+    //}
 }

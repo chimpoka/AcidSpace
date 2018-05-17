@@ -7,14 +7,18 @@ using TMPro;
 
 public class HUD : MonoBehaviour
 {
+    public GameObject tapToStart;
+    public GameObject congratulationsWindow;
     public Image pauseMenu;
     public Image endGameMenu;
     public TextMeshProUGUI score;
     public TextMeshProUGUI bestScore;
+    public TextMeshProUGUI life;
     public float fadingTime = 0.8f;
 
     private Fading fading;
     private static HUD instance = null;
+    private Tutorial tutorial;
 
     public static HUD Instance
     {
@@ -38,20 +42,57 @@ public class HUD : MonoBehaviour
 
     private void Start()
     {
-        //decelerationPower = GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMobile>().decelerationPower;
-        //decelerationDuration = GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMobile>().decelerationDuration;
-        //decelerationTime = GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMobile>().decelerationTime;
+        //if (Controller.moveControl == MoveControl.Touchscreen)
+        //{
+        //    bestScore.text = "BEST SCORE: " + Controller.bestScoreTouchscreen.ToString();
+        //    life.text = Controller.lifeTouchscreen.ToString();
+        //}
+        //else if (Controller.moveControl == MoveControl.Accelerometer)
+        //{
+        //    bestScore.text = "BEST SCORE: " + Controller.bestScoreAccelerometer.ToString();
+        //    life.text = Controller.lifeAccelerometer.ToString();
+        //}
 
         fading = gameObject.GetComponentInChildren<Fading>();
         fading.FadeIn(fadingTime);
-        StartGame();
+
+        tutorial = GameObject.FindGameObjectWithTag("Player").GetComponent<Tutorial>();
+
+        //if (tutorial.IsTouchscreenTutorial() == true)
+        //    tutorial.FirstStartGameTouchscreen();
+        //else if (tutorial.IsAccelerometerTutorial() == true)
+        //    tutorial.FirstStartGameAccelerometer();
+        //else
+            StartGame();
+    }
+
+    public void SetScore(float value)
+    {
+        score.text = "NOW: " + value.ToString();
     }
 
     private void Update()
     {
         score.text = "NOW: " + Controller.score.ToString();
 
-       
+        if (!tutorial.IsTutorial())
+        {
+            if (Controller.gameMode == GameMode.Play && Controller.prepareToStartGame == true)
+            {
+                tapToStart.SetActive(true);
+                if (tapToStart.activeSelf == true && Input.GetMouseButton(0) && Input.mousePosition.y < Screen.height * 0.81)
+                {
+                    tapToStart.SetActive(false);
+                    Controller.prepareToStartGame = false;
+                    GameObject.Find("ShipObject").GetComponent<RocketMobile>().StartGame();
+                }
+            }
+
+            if (Controller.gameMode == GameMode.Pause)
+            {
+                tapToStart.SetActive(false);
+            }
+        }
     }
 
 
@@ -61,12 +102,27 @@ public class HUD : MonoBehaviour
         pauseMenu.gameObject.SetActive(false);
         endGameMenu.gameObject.SetActive(false);
 
-        Controller.gameMode = GameMode.Play;
-
         if (Controller.moveControl == MoveControl.Touchscreen)
+        {
+            if (tutorial.IsTouchscreenTutorial())
+                tutorial.FirstStartGameTouchscreen();
             bestScore.text = "BEST SCORE: " + Controller.bestScoreTouchscreen.ToString();
+            life.text = Controller.lifeTouchscreen.ToString();
+        }
         else if (Controller.moveControl == MoveControl.Accelerometer)
+        {
+            if (tutorial.IsAccelerometerTutorial())
+                tutorial.FirstStartGameAccelerometer();
             bestScore.text = "BEST SCORE: " + Controller.bestScoreAccelerometer.ToString();
+            life.text = Controller.lifeAccelerometer.ToString();
+        }
+
+        Controller.gameMode = GameMode.Play;
+        Controller.prepareToStartGame = true;
+        GameObject.Find("ShipObject").GetComponent<RocketMobile>().PrepareToStartGame();
+
+        if (tutorial.IsTutorial() == false)
+            tapToStart.SetActive(true);
     }
 
 
@@ -102,6 +158,10 @@ public class HUD : MonoBehaviour
     public void onNewGameButtonClick()
     {
         Controller.Instance.startFromCheckpoint = false;
+        if (Controller.moveControl == MoveControl.Touchscreen)
+            Controller.lifeTouchscreen = 5;
+        else if (Controller.moveControl == MoveControl.Accelerometer)
+            Controller.lifeAccelerometer = 5;
         StartCoroutine("StartLevel");
     }
 
@@ -121,7 +181,7 @@ public class HUD : MonoBehaviour
         fading.FadeOut(fadingTime);
         yield return new WaitForSeconds(fadingTime);
         fading.FadeIn(fadingTime);
-        GameObject.Find("ShipObject").GetComponent<RocketMobile>().StartGame();
+        //GameObject.Find("ShipObject").GetComponent<RocketMobile>().StartGame();
         StartGame();
     }
 
@@ -221,10 +281,10 @@ public class HUD : MonoBehaviour
 
     // Debug
 
-    public void onNewGameDebugClick()
-    {
-        DataManager.SaveLoadNewGame();
-    }
+    //public void onNewGameDebugClick()
+    //{
+    //    DataManager.SaveLoadNewGame();
+    //}
 
 
 
@@ -243,4 +303,26 @@ public class HUD : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<RocketEffects>().isRocketInvulnerable = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<RocketEffects>().invulnerabilityScore = Controller.score;
     }
+
+
+
+    public void ShowCongratulations()
+    {
+        congratulationsWindow.SetActive(true);
+        StartCoroutine("WinGame");
+    }
+
+    public void HideCongratulations()
+    {
+        congratulationsWindow.SetActive(false);
+    }
+
+    IEnumerator WinGame()
+    {
+        fading.FadeOut(3);
+        yield return new WaitForSeconds(3);
+        HideCongratulations();
+        SceneManager.LoadScene(0);       
+    }
+
 }

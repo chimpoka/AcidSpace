@@ -7,7 +7,7 @@ public class RocketMobile : MonoBehaviour
     [Header("Common Settings")]
     public ParticleSystem particleExplosion;
     public ParticleSystem particleCheckpoint;
-    public float startSpeed = 6f;
+    public float startSpeed =12f;
     public float startPosY = 8.2f;
     public float maxAngle = 45f;
     public int checkPoint = 200;
@@ -32,20 +32,22 @@ public class RocketMobile : MonoBehaviour
     private float speedPerFrame_y = 0;
     private float bestScore;
     private float speed;
-    
-   
-    
+    private int currentCheckPoint;
+    private int life;
+
+
+
 
     void Start()
     {
-        StartGame();
+       // StartGame();
 
         changeEnvironment = GameObject.Find("Environment").GetComponent<Environment>().changeEnvironmentPoint;
     }
 
     void Update()
     {
-        if (Controller.gameMode == GameMode.Play)
+        if (Controller.gameMode == GameMode.Play && speed > 0)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
                 HUD.Instance.onPauseButtonClick();           
@@ -59,9 +61,6 @@ public class RocketMobile : MonoBehaviour
                 MoveAccelerometer();
 
             CheckPoint();
-
-           
-            
         }
     }
 
@@ -69,8 +68,11 @@ public class RocketMobile : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if ((Controller.gameMode == GameMode.Play) && (GetComponent<RocketEffects>().isRocketInvulnerable == false))
-            Die();
+        if (GetComponent<Tutorial>().IsTutorial() == false)
+        {
+            if ((Controller.gameMode == GameMode.Play) && (GetComponent<RocketEffects>().isRocketInvulnerable == false))
+                Die();
+        }
     }
 
 
@@ -78,7 +80,7 @@ public class RocketMobile : MonoBehaviour
 
     // User Methods
 
-    public void StartGame()
+    public void PrepareToStartGame()
     {
         Transform[] transforms = gameObject.GetComponentsInChildren<Transform>(true);
 
@@ -91,32 +93,75 @@ public class RocketMobile : MonoBehaviour
         }
 
         if (Controller.moveControl == MoveControl.Touchscreen)
+        {
             bestScore = Controller.bestScoreTouchscreen;
+            currentCheckPoint = Controller.checkpointTouchscreen;
+            life = Controller.lifeTouchscreen;
+        }
         else if (Controller.moveControl == MoveControl.Accelerometer)
+        {
             bestScore = Controller.bestScoreAccelerometer;
+            currentCheckPoint = Controller.checkpointAccelerometer;
+            life = Controller.lifeAccelerometer;
+        }
 
         if (Controller.Instance.startFromCheckpoint == true)
         {
             #if UNITY_EDITOR
-                transform.position = new Vector3(startPosX, startPosY, transform.position.z);
-            #endif
+                        transform.position = new Vector3(startPosX, startPosY, transform.position.z);
+                        #endif
             #if !UNITY_EDITOR
-                transform.position = new Vector3((int)bestScore / checkPoint * checkPoint, startPosY, transform.position.z);
+                transform.position = new Vector3(currentCheckPoint / checkPoint * checkPoint, startPosY, transform.position.z);
             #endif
         }
         else
             transform.position = new Vector3(0, startPosY, transform.position.z);
 
-        Time.timeScale = 1.0f;
+        if (GetComponent<Tutorial>().IsTutorial())
+            transform.position = new Vector3(-30, startPosY, transform.position.z);
+        else if (life == 5)
+            transform.position = new Vector3(0, startPosY, transform.position.z);
+
+        transform.eulerAngles = Vector3.zero;
+        speedPerFrame_y = 0;
+        mousePressed = false;
+
         GetComponent<RocketEffects>().isRocketSlow = false;
         GetComponent<RocketEffects>().isRocketInvulnerable = false;
         GetComponent<RocketEffects>().shield.SetActive(false);
+    }
 
+    public void StartGame()
+    {
+        Time.timeScale = 1.0f;
         speed = startSpeed;
+    }
+
+    public void StopGame()
+    {
+        speed = 0;
     }
 
     private void CheckPoint()
     {
+        if (transform.position.x >= 2000)
+        {
+            if (Controller.moveControl == MoveControl.Touchscreen)
+            {
+                Controller.completedTouchscreen = 1;
+            }
+            else if (Controller.moveControl == MoveControl.Accelerometer)
+            {
+                Controller.completedAccelerometer = 1;
+            }
+
+            GetComponent<RocketEffects>().isRocketSlow = true;
+            GetComponent<RocketEffects>().slowScore = Controller.score;
+
+            if (transform.position.x >= 2020)
+                HUD.Instance.ShowCongratulations();
+        }
+
         if ((Mathf.Floor(transform.position.x) % checkPoint == 0) && (transform.position.x != 0) && (checkPointDone == false))
         {
             checkPointDone = true;
@@ -128,7 +173,6 @@ public class RocketMobile : MonoBehaviour
                     anim.SetTrigger("CheckPoint");
             }
 
-
             particleCheckpoint.Play();
             Controller.Instance.GetComponent<AudioManager>().PlaySound("CheckPoint");
         }
@@ -138,10 +182,38 @@ public class RocketMobile : MonoBehaviour
         }
     }   
 
-    private void Die()
+    public void Die()
     {
         speed = 0;
-        
+        life--;
+
+        if (Controller.moveControl == MoveControl.Touchscreen)
+        {
+            if (life == 0)
+            {
+                Controller.checkpointTouchscreen = 0;
+                Controller.lifeTouchscreen = 5;
+            }
+            else
+            {
+                Controller.checkpointTouchscreen = Controller.score;
+                Controller.lifeTouchscreen = life;
+            }
+        }
+        else if (Controller.moveControl == MoveControl.Accelerometer)
+        {
+            if (life == 0)
+            {
+                Controller.checkpointAccelerometer = 0;
+                Controller.lifeAccelerometer = 5;
+            }
+            else
+            {
+                Controller.checkpointAccelerometer = Controller.score;
+                Controller.lifeAccelerometer = life;
+            }
+        }
+
         Transform[] transforms = gameObject.GetComponentsInChildren<Transform>();
 
         foreach (Transform tr in transforms)
@@ -156,7 +228,7 @@ public class RocketMobile : MonoBehaviour
         {
             if (Controller.moveControl == MoveControl.Touchscreen)
                 Controller.bestScoreTouchscreen = Controller.score;
-            if (Controller.moveControl == MoveControl.Accelerometer)
+            else if (Controller.moveControl == MoveControl.Accelerometer)
                 Controller.bestScoreAccelerometer = Controller.score;
         }
             
@@ -208,7 +280,7 @@ public class RocketMobile : MonoBehaviour
         if (eulerAngleZ > maxAngle * 1.1)
             eulerAngleZ -= 360;
 
-        if (Input.GetMouseButton(0) && Input.mousePosition.y < 880)
+        if (Input.GetMouseButton(0) && Input.mousePosition.y < Screen.height * 0.81)
         {            
             if (mousePressed == false)
             {
@@ -220,6 +292,7 @@ public class RocketMobile : MonoBehaviour
             if (rotationDeltaTime < rotationTime)
             {
                 newRot.z = Mathf.Lerp(eulerAngleZ, maxAngle, rotationDeltaTime / rotationTime);
+               // Debug.Log(speedPerFrame_y + ", " + speed + ", " + rotationDeltaTime / rotationTime);
                 speedPerFrame_y = Mathf.Lerp(speedPerFrame_y, speed, rotationDeltaTime / rotationTime);
                 rotationDeltaTime += Time.deltaTime;
             }
