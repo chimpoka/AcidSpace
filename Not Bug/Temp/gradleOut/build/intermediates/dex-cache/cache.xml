@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\5f3247dae8ab3b342bc74aedc1ad103560e7d851\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_d9db3bbe20744eaa8be538ff5b86c460fa38b201.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\c4d30ece82dee804cbcf3eb041c4a56284a5d946\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="95b1eb2549f384e70a77b72e4f360ed4c8dc0331">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_8fc3acc64c37c86bdf5432bceda57fbb7f2ad068.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\8d5718083b27894871dc8d479433a502cf27e08e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_da651bc55d98c6302c545f2d0a319e333bed601f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\81e2d064913af961371b16e71894738af8f24ddc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="64adc9f1351d7d04b236dca2e7b980a486bdacb5">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_ba5b464aa06f415ff6aa2758aa95c275253a93b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\35cbea3903fc92d65ea4eb1fbcadc74542e85b80\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_0b35cd8b5f15e7bbd8a51c3117b08fec63d45a54.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\9457e40b124f179911eb499feec27a631d166074\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0ab379ccbc45dadc6843cf258d9e741075758dd5">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_83f6869e8fa8cd94825cac21538977ef6f964d39.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\libs\unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c6eace347a88d2038dc7d81c32c6f9612fc663cb">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\unity-classes_a3c971c240f599670217d8281bada2650c0309b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\eaca75dda9441782e32a30a976363809467b532d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0ceba9b23d029cde7fb7cea7b8ed5e6bb1611e27">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_dfa23204807c97f16b6b12d80a17fe8fe8cebcb0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\libs\com.android.support.support-annotations-25.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\com.android.support.support-annotations-25.2.0_9a22ea15953353926a8df99bcf237cd2efe4070e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\6cb796f531a48f4b2e1055b14730a5829127877d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_84db5997f0f0b1668c0f430d3cc27b314289b1da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\3e358380c33800c5dbf2f9e2d3ef0c1bb70ac0c5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e9dc052d4d36b53c3a1bb2d5bf634fcac5d35037">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_685b1da6f133692db10bd1ba00b40388247aed54.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\8c276491ec6d148314cfe3faf17794485506faac\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_6a0857b2367a3b69ae28f4e15f540ce6936c493a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\ebf7ba284acd3d9d3da59d8f8dd9ef9070642501\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2187ba282e1bb00afbaf23f5a4227b5c399e2b21">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_4ab422e28d9a3761b9625ecccd1b476847798299.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\1d3f789b7a606bb0d8baa77d24670a9ed3b8f182\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_731bbfde8af88489599baf1ce85b7123562a1df7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\b197b47c758ac7cc53ce86fec88b3be8d7a23695\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fd6ae8c61bd548b134265ef3c37807d4efcc854c">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_7fb616fb117a90aa17a93dccd7c02434e304fefd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3810dd933166e9c76b2d192ee18d5699e9701bb4">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_6a8b9a0ad3ed3d6150a3777ef30778163a824aca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\69dcfbffe46e42e58981d20d84c5970d9ab099dd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="225f093d9a041f8206d812d3055a886a816ac365">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_d810059b96e38f6daa9b3248f540b1032691f5a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\GooglePlayGamesManifest.plugin\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f3dfc3ec43a715236e4e6a48a03dfb473701f859">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_f787b33275b82641c2ccc2a2009acfa64fe59260.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User\.android\build-cache\430fcfa17de2cf9bb5859b7c548895f90240322b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="21fff55a9a49a1e8dadbe3cc0fc56777a085186f">
+        <dex dex="D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_2601f864f269acff7d41df5430eeaa2a20a2022e.jar" />
+    </item>
+
+</items>

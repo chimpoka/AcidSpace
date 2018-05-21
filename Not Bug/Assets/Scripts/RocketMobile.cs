@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class RocketMobile : MonoBehaviour
 {
@@ -150,12 +151,14 @@ public class RocketMobile : MonoBehaviour
             {
                 Controller.completedTouchscreen = 1;
                 Controller.bestScoreTouchscreen = Controller.Score;
+                Social.ReportScore(Controller.bestScoreTouchscreen, SpaceOceanResources.leaderboard_touchscreen, (bool success) => {});
                 Controller.checkpointTouchscreen = 0;
             }
             else if (Controller.moveControl == MoveControl.Accelerometer)
             {
                 Controller.completedAccelerometer = 1;
                 Controller.bestScoreAccelerometer = Controller.Score;
+                Social.ReportScore(Controller.bestScoreAccelerometer, SpaceOceanResources.leaderboard_accelerometer, (bool success) => { });
                 Controller.checkpointAccelerometer = 0;
             }
 
@@ -231,9 +234,15 @@ public class RocketMobile : MonoBehaviour
         if (Controller.score > bestScore)
         {
             if (Controller.moveControl == MoveControl.Touchscreen)
+            {
                 Controller.bestScoreTouchscreen = Controller.score;
+                Social.ReportScore(Controller.bestScoreTouchscreen, SpaceOceanResources.leaderboard_touchscreen, (bool success) => { });
+            }
             else if (Controller.moveControl == MoveControl.Accelerometer)
+            {
                 Controller.bestScoreAccelerometer = Controller.score;
+                Social.ReportScore(Controller.bestScoreAccelerometer, SpaceOceanResources.leaderboard_accelerometer, (bool success) => { });
+            }
         }
             
 

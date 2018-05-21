@@ -1,0 +1,49 @@
+[
+    {
+        "outputFile": "D:\\Unity Projects New\\AcidSpace\\Not Bug\\Temp\\gradleOut\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v14\\values-v14.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 201
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\.android\\build-cache\\eaca75dda9441782e32a30a976363809467b532d\\output\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 201
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 206,
+                    "endLine": 6,
+                    "endColumn": 8,
+                    "endOffset": 305
+                },
+                "from": {
+                    "file": "D:\\Unity Projects New\\AcidSpace\\Not Bug\\Temp\\gradleOut\\src\\main\\res\\values-v14\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 0,
+                        "startOffset": 53,
+                        "endLine": 3,
+                        "endColumn": 8,
+                        "endOffset": 153
+                    }
+                }
+            }
+        ]
+    }
+]

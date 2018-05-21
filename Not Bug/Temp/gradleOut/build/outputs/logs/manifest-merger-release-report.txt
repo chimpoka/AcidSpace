@@ -1,0 +1,246 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:2:1-30:12
+	package
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:2:120-159
+		INJECTED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml
+		INJECTED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:2:94-119
+		INJECTED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml
+		INJECTED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:2:70-93
+		INJECTED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml
+		INJECTED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:2:160-200
+supports-screens
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:3:3-163
+	android:largeScreens
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:3:47-74
+	android:smallScreens
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:3:104-131
+	android:normalScreens
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:3:75-103
+	android:xlargeScreens
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:3:132-160
+	android:anyDensity
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:3:21-46
+application
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:4:3-22:17
+MERGED from [:com.android.support.support-compat-25.2.0:] C:\Users\User\.android\build-cache\35cbea3903fc92d65ea4eb1fbcadc74542e85b80\output\AndroidManifest.xml:25:5-20
+MERGED from [:com.android.support.support-core-ui-25.2.0:] C:\Users\User\.android\build-cache\1d3f789b7a606bb0d8baa77d24670a9ed3b8f182\output\AndroidManifest.xml:25:5-20
+MERGED from [:com.android.support.support-core-utils-25.2.0:] C:\Users\User\.android\build-cache\6cb796f531a48f4b2e1055b14730a5829127877d\output\AndroidManifest.xml:25:5-20
+MERGED from [:com.android.support.support-fragment-25.2.0:] C:\Users\User\.android\build-cache\8d5718083b27894871dc8d479433a502cf27e08e\output\AndroidManifest.xml:25:5-20
+MERGED from [:com.android.support.support-media-compat-25.2.0:] C:\Users\User\.android\build-cache\5f3247dae8ab3b342bc74aedc1ad103560e7d851\output\AndroidManifest.xml:25:5-20
+MERGED from [:com.android.support.support-v4-25.2.0:] C:\Users\User\.android\build-cache\8c276491ec6d148314cfe3faf17794485506faac\output\AndroidManifest.xml:25:5-20
+MERGED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:19:5-25:19
+MERGED from [:com.google.android.gms.play-services-auth-api-phone-license-11.6.2:] C:\Users\User\.android\build-cache\50fe0b3947779c9478b2bf016d5be6db0821eeaf\output\AndroidManifest.xml:5:5-20
+MERGED from [:com.google.android.gms.play-services-auth-base-license-11.6.2:] C:\Users\User\.android\build-cache\2a6a319981af25ac4dda682a664174e675445d9b\output\AndroidManifest.xml:5:5-20
+MERGED from [:com.google.android.gms.play-services-base-11.6.2:] C:\Users\User\.android\build-cache\3e358380c33800c5dbf2f9e2d3ef0c1bb70ac0c5\output\AndroidManifest.xml:18:5-20:19
+MERGED from [:com.google.android.gms.play-services-base-license-11.6.2:] C:\Users\User\.android\build-cache\7486805a8c4e431a837ffff07c0ce184ef1297a4\output\AndroidManifest.xml:5:5-20
+MERGED from [:com.google.android.gms.play-services-basement-11.6.2:] C:\Users\User\.android\build-cache\b197b47c758ac7cc53ce86fec88b3be8d7a23695\output\AndroidManifest.xml:19:5-21:19
+MERGED from [:com.google.android.gms.play-services-basement-license-11.6.2:] C:\Users\User\.android\build-cache\4bee08aecb5f38e8c94d782c84511befc6f0e4ce\output\AndroidManifest.xml:5:5-20
+MERGED from [:com.google.android.gms.play-services-drive-11.6.2:] C:\Users\User\.android\build-cache\430fcfa17de2cf9bb5859b7c548895f90240322b\output\AndroidManifest.xml:18:5-19
+MERGED from [:com.google.android.gms.play-services-drive-license-11.6.2:] C:\Users\User\.android\build-cache\0e4ab99e9c43ba160598408966b3b92323046604\output\AndroidManifest.xml:5:5-20
+MERGED from [:com.google.android.gms.play-services-games-11.6.2:] C:\Users\User\.android\build-cache\ebf7ba284acd3d9d3da59d8f8dd9ef9070642501\output\AndroidManifest.xml:18:5-19
+MERGED from [:com.google.android.gms.play-services-games-license-11.6.2:] C:\Users\User\.android\build-cache\c1ea853aed6c5f60e1bca832c2e8de37acb155f1\output\AndroidManifest.xml:5:5-20
+MERGED from [:com.google.android.gms.play-services-nearby-11.6.2:] C:\Users\User\.android\build-cache\c4d30ece82dee804cbcf3eb041c4a56284a5d946\output\AndroidManifest.xml:5:5-19
+MERGED from [:com.google.android.gms.play-services-nearby-license-11.6.2:] C:\Users\User\.android\build-cache\1c99087b7da45fb25366ac2fc9c24f458f2f0dc5\output\AndroidManifest.xml:5:5-20
+MERGED from [:com.google.android.gms.play-services-tasks-11.6.2:] C:\Users\User\.android\build-cache\69dcfbffe46e42e58981d20d84c5970d9ab099dd\output\AndroidManifest.xml:4:5-19
+MERGED from [:com.google.android.gms.play-services-tasks-license-11.6.2:] C:\Users\User\.android\build-cache\bfca577010b5d21104a4a433211f75c7bed627d1\output\AndroidManifest.xml:5:5-20
+MERGED from [:com.google.games.gpgs-plugin-support-0.9.50:] C:\Users\User\.android\build-cache\eaca75dda9441782e32a30a976363809467b532d\output\AndroidManifest.xml:9:5-20
+MERGED from [gradleOut:GooglePlayGamesManifest.plugin:unspecified] D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\GooglePlayGamesManifest.plugin\build\intermediates\bundles\default\AndroidManifest.xml:15:5-30:19
+	android:label
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:4:50-82
+	android:icon
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:4:16-49
+	android:banner
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:4:147-184
+	android:theme
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:4:83-124
+	android:isGame
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:4:125-146
+activity#com.unity3d.player.UnityPlayerActivity
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:5:5-12:16
+	android:screenOrientation
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:5:102-145
+	android:label
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:5:15-47
+	android:launchMode
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:5:146-177
+	android:configChanges
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:5:178-359
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:5:48-101
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER+android.intent.category.LEANBACK_LAUNCHER
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:6:7-10:23
+action#android.intent.action.MAIN
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:7:9-61
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:7:17-58
+category#android.intent.category.LAUNCHER
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:8:9-69
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:8:19-66
+category#android.intent.category.LEANBACK_LAUNCHER
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:9:9-78
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:9:19-75
+meta-data#unityplayer.UnityActivity
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:11:7-82
+	android:value
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:11:59-79
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:11:18-58
+activity#com.google.games.bridge.NativeBridgeActivity
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:13:5-148
+MERGED from [gradleOut:GooglePlayGamesManifest.plugin:unspecified] D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\GooglePlayGamesManifest.plugin\build\intermediates\bundles\default\AndroidManifest.xml:27:9-29:86
+	android:theme
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:13:75-145
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:13:15-74
+meta-data#com.google.android.gms.games.APP_ID
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:15:5-101
+MERGED from [gradleOut:GooglePlayGamesManifest.plugin:unspecified] D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\GooglePlayGamesManifest.plugin\build\intermediates\bundles\default\AndroidManifest.xml:18:9-20:47
+	android:value
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:15:67-98
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:15:16-66
+meta-data#com.google.android.gms.games.unityVersion
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:17:5-100
+MERGED from [gradleOut:GooglePlayGamesManifest.plugin:unspecified] D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\GooglePlayGamesManifest.plugin\build\intermediates\bundles\default\AndroidManifest.xml:23:9-25:40
+	android:value
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:17:73-97
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:17:16-72
+meta-data#unity.build-id
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:18:5-101
+	android:value
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:18:46-98
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:18:16-45
+meta-data#unity.splash-mode
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:19:5-69
+	android:value
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:19:49-66
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:19:16-48
+meta-data#unity.splash-enable
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:20:5-74
+	android:value
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:20:51-71
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:20:16-50
+meta-data#android.max_aspect
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:21:5-72
+	android:value
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:21:50-69
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:21:16-49
+uses-sdk
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:23:3-72
+MERGED from [:com.android.support.support-compat-25.2.0:] C:\Users\User\.android\build-cache\35cbea3903fc92d65ea4eb1fbcadc74542e85b80\output\AndroidManifest.xml:21:5-23:58
+MERGED from [:com.android.support.support-core-ui-25.2.0:] C:\Users\User\.android\build-cache\1d3f789b7a606bb0d8baa77d24670a9ed3b8f182\output\AndroidManifest.xml:21:5-23:58
+MERGED from [:com.android.support.support-core-utils-25.2.0:] C:\Users\User\.android\build-cache\6cb796f531a48f4b2e1055b14730a5829127877d\output\AndroidManifest.xml:21:5-23:61
+MERGED from [:com.android.support.support-fragment-25.2.0:] C:\Users\User\.android\build-cache\8d5718083b27894871dc8d479433a502cf27e08e\output\AndroidManifest.xml:21:5-23:60
+MERGED from [:com.android.support.support-media-compat-25.2.0:] C:\Users\User\.android\build-cache\5f3247dae8ab3b342bc74aedc1ad103560e7d851\output\AndroidManifest.xml:21:5-23:63
+MERGED from [:com.android.support.support-v4-25.2.0:] C:\Users\User\.android\build-cache\8c276491ec6d148314cfe3faf17794485506faac\output\AndroidManifest.xml:21:5-23:54
+MERGED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:17:5-43
+MERGED from [:com.google.android.gms.play-services-auth-api-phone-11.6.2:] C:\Users\User\.android\build-cache\81e2d064913af961371b16e71894738af8f24ddc\output\AndroidManifest.xml:3:3-41
+MERGED from [:com.google.android.gms.play-services-auth-api-phone-license-11.6.2:] C:\Users\User\.android\build-cache\50fe0b3947779c9478b2bf016d5be6db0821eeaf\output\AndroidManifest.xml:4:5-43
+MERGED from [:com.google.android.gms.play-services-auth-base-11.6.2:] C:\Users\User\.android\build-cache\9457e40b124f179911eb499feec27a631d166074\output\AndroidManifest.xml:4:5-43
+MERGED from [:com.google.android.gms.play-services-auth-base-license-11.6.2:] C:\Users\User\.android\build-cache\2a6a319981af25ac4dda682a664174e675445d9b\output\AndroidManifest.xml:4:5-43
+MERGED from [:com.google.android.gms.play-services-base-11.6.2:] C:\Users\User\.android\build-cache\3e358380c33800c5dbf2f9e2d3ef0c1bb70ac0c5\output\AndroidManifest.xml:17:5-43
+MERGED from [:com.google.android.gms.play-services-base-license-11.6.2:] C:\Users\User\.android\build-cache\7486805a8c4e431a837ffff07c0ce184ef1297a4\output\AndroidManifest.xml:4:5-43
+MERGED from [:com.google.android.gms.play-services-basement-11.6.2:] C:\Users\User\.android\build-cache\b197b47c758ac7cc53ce86fec88b3be8d7a23695\output\AndroidManifest.xml:17:5-43
+MERGED from [:com.google.android.gms.play-services-basement-license-11.6.2:] C:\Users\User\.android\build-cache\4bee08aecb5f38e8c94d782c84511befc6f0e4ce\output\AndroidManifest.xml:4:5-43
+MERGED from [:com.google.android.gms.play-services-drive-11.6.2:] C:\Users\User\.android\build-cache\430fcfa17de2cf9bb5859b7c548895f90240322b\output\AndroidManifest.xml:17:5-43
+MERGED from [:com.google.android.gms.play-services-drive-license-11.6.2:] C:\Users\User\.android\build-cache\0e4ab99e9c43ba160598408966b3b92323046604\output\AndroidManifest.xml:4:5-43
+MERGED from [:com.google.android.gms.play-services-games-11.6.2:] C:\Users\User\.android\build-cache\ebf7ba284acd3d9d3da59d8f8dd9ef9070642501\output\AndroidManifest.xml:17:5-43
+MERGED from [:com.google.android.gms.play-services-games-license-11.6.2:] C:\Users\User\.android\build-cache\c1ea853aed6c5f60e1bca832c2e8de37acb155f1\output\AndroidManifest.xml:4:5-43
+MERGED from [:com.google.android.gms.play-services-nearby-11.6.2:] C:\Users\User\.android\build-cache\c4d30ece82dee804cbcf3eb041c4a56284a5d946\output\AndroidManifest.xml:3:5-43
+MERGED from [:com.google.android.gms.play-services-nearby-license-11.6.2:] C:\Users\User\.android\build-cache\1c99087b7da45fb25366ac2fc9c24f458f2f0dc5\output\AndroidManifest.xml:4:5-43
+MERGED from [:com.google.android.gms.play-services-tasks-11.6.2:] C:\Users\User\.android\build-cache\69dcfbffe46e42e58981d20d84c5970d9ab099dd\output\AndroidManifest.xml:3:5-43
+MERGED from [:com.google.android.gms.play-services-tasks-license-11.6.2:] C:\Users\User\.android\build-cache\bfca577010b5d21104a4a433211f75c7bed627d1\output\AndroidManifest.xml:4:5-43
+MERGED from [:com.google.games.gpgs-plugin-support-0.9.50:] C:\Users\User\.android\build-cache\eaca75dda9441782e32a30a976363809467b532d\output\AndroidManifest.xml:7:5-44
+MERGED from [gradleOut:GooglePlayGamesManifest.plugin:unspecified] D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\GooglePlayGamesManifest.plugin\build\intermediates\bundles\default\AndroidManifest.xml:11:5-13:41
+	tools:overrideLibrary
+		ADDED from [:com.android.support.support-compat-25.2.0:] C:\Users\User\.android\build-cache\35cbea3903fc92d65ea4eb1fbcadc74542e85b80\output\AndroidManifest.xml:23:9-55
+	android:targetSdkVersion
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:23:40-69
+		INJECTED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml
+		INJECTED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:23:13-39
+uses-feature#0x00020000
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:24:3-52
+	android:glEsVersion
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:24:17-49
+uses-permission#android.permission.INTERNET
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:25:3-65
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:25:20-62
+uses-feature#android.hardware.sensor.accelerometer
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:26:3-97
+	android:required
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:26:70-94
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:26:17-69
+uses-feature#android.hardware.touchscreen
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:27:3-88
+	android:required
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:27:61-85
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:27:17-60
+uses-feature#android.hardware.touchscreen.multitouch
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:28:3-99
+	android:required
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:28:72-96
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:28:17-71
+uses-feature#android.hardware.touchscreen.multitouch.distinct
+ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:29:3-108
+	android:required
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:29:81-105
+	android:name
+		ADDED from D:\Unity Projects New\AcidSpace\Not Bug\Temp\gradleOut\src\main\AndroidManifest.xml:29:17-80
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:20:9-189
+	android:excludeFromRecents
+		ADDED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:20:129-162
+	android:exported
+		ADDED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:20:163-187
+	android:theme
+		ADDED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:20:69-128
+	android:name
+		ADDED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:20:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:24:9-184
+	android:exported
+		ADDED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:24:64-87
+	android:permission
+		ADDED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:24:88-182
+	android:name
+		ADDED from [:com.google.android.gms.play-services-auth-11.6.2:] C:\Users\User\.android\build-cache\2e52006850a0f48ea5e868edc4a25a445634633c\output\AndroidManifest.xml:24:18-63
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [:com.google.android.gms.play-services-base-11.6.2:] C:\Users\User\.android\build-cache\3e358380c33800c5dbf2f9e2d3ef0c1bb70ac0c5\output\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [:com.google.android.gms.play-services-base-11.6.2:] C:\Users\User\.android\build-cache\3e358380c33800c5dbf2f9e2d3ef0c1bb70ac0c5\output\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [:com.google.android.gms.play-services-base-11.6.2:] C:\Users\User\.android\build-cache\3e358380c33800c5dbf2f9e2d3ef0c1bb70ac0c5\output\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [:com.google.android.gms.play-services-base-11.6.2:] C:\Users\User\.android\build-cache\3e358380c33800c5dbf2f9e2d3ef0c1bb70ac0c5\output\AndroidManifest.xml:19:19-85
+meta-data#com.google.android.gms.version
+ADDED from [:com.google.android.gms.play-services-basement-11.6.2:] C:\Users\User\.android\build-cache\b197b47c758ac7cc53ce86fec88b3be8d7a23695\output\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [:com.google.android.gms.play-services-basement-11.6.2:] C:\Users\User\.android\build-cache\b197b47c758ac7cc53ce86fec88b3be8d7a23695\output\AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [:com.google.android.gms.play-services-basement-11.6.2:] C:\Users\User\.android\build-cache\b197b47c758ac7cc53ce86fec88b3be8d7a23695\output\AndroidManifest.xml:20:20-65
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:com.google.android.gms.play-services-nearby-11.6.2:] C:\Users\User\.android\build-cache\c4d30ece82dee804cbcf3eb041c4a56284a5d946\output\AndroidManifest.xml:4:5-78
+	android:name
+		ADDED from [:com.google.android.gms.play-services-nearby-11.6.2:] C:\Users\User\.android\build-cache\c4d30ece82dee804cbcf3eb041c4a56284a5d946\output\AndroidManifest.xml:4:22-76

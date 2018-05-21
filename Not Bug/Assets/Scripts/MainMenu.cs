@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
+using System;
 
 public class MainMenu : MonoBehaviour {
 
     public float fadingTime = 0.8f;
     public Image completedImageTouchscreen;
     public Image completedImageAccelerometer;
-
+    public bool isConnectedToGoogleServices = false;
+    public GameObject unableToConnect;
 
     private Fading fading;
 
@@ -28,6 +32,11 @@ public class MainMenu : MonoBehaviour {
                 rt.gameObject.SetActive(false);
             if (rt.name == "OptionsMenu")
                 rt.gameObject.SetActive(false);
+            if (rt.name == "Leaderboards")
+                rt.gameObject.SetActive(false);
+
+            GoogleServicesInit();
+            ConnectToGoogleServices();
         }
     }
 
@@ -37,8 +46,26 @@ public class MainMenu : MonoBehaviour {
     }
 
 
+    public void GoogleServicesInit()
+    {
+        PlayGamesPlatform.Activate();
+        PlayGamesPlatform.DebugLogEnabled = false;
+    }
 
-    // Play button
+    public bool ConnectToGoogleServices()
+    {
+        if (!isConnectedToGoogleServices)
+        {
+            Social.localUser.Authenticate((bool success) =>
+            {
+                isConnectedToGoogleServices = success;
+            });
+        }
+        return isConnectedToGoogleServices;
+    }
+
+
+    // Main menu
 
     public void onPlayButtonClick()
     {
@@ -48,6 +75,26 @@ public class MainMenu : MonoBehaviour {
             completedImageAccelerometer.enabled = true;
     }
 
+
+    // Leaderboards
+
+    public void onLeaderboardsClick()
+    {
+        ConnectToGoogleServices();
+        if (Social.localUser.authenticated)
+        {
+            Social.ShowLeaderboardUI();
+        }
+        else
+        {
+            ShowUnableToConnect();
+        }
+    }
+
+    private void ShowUnableToConnect()
+    {
+        unableToConnect.SetActive(true);
+    }
 
 
     // Play menu
