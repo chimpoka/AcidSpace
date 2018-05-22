@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour {
     public Image completedImageAccelerometer;
     public bool isConnectedToGoogleServices = false;
     public GameObject unableToConnect;
+    public Sprite[] toggleBorderSprites;
+    public Toggle toggleTutorial;
 
     private Fading fading;
 
@@ -22,6 +24,12 @@ public class MainMenu : MonoBehaviour {
         Controller.gameMode = GameMode.Pause;
         fading = gameObject.GetComponentInChildren<Fading>();
         fading.FadeIn(fadingTime);
+
+        if (Controller.showTutorialToggle == 1)
+            toggleTutorial.isOn = true;
+        else
+            toggleTutorial.isOn = false;
+
 
         RectTransform[] rectTransforms = GetComponentsInChildren<RectTransform>(true);
         foreach (RectTransform rt in rectTransforms)
@@ -118,6 +126,28 @@ public class MainMenu : MonoBehaviour {
         fading.FadeOut(fadingTime);
         yield return new WaitForSeconds(fadingTime);
         SceneManager.LoadScene(scene);
+    }
+
+    public void onToggleTutorialClick()
+    {
+        Image[] images = toggleTutorial.GetComponentsInChildren<Image>();
+        Image bg = null;
+        foreach (Image image in images)
+        {
+            if (image.name == "Background")
+                bg = image;
+        }
+
+        if (toggleTutorial.isOn)
+        {
+            Controller.showTutorialToggle = 1;
+            bg.sprite = toggleBorderSprites[0];
+        }
+        else
+        {
+            Controller.showTutorialToggle = 0;
+            bg.sprite = toggleBorderSprites[1];
+        }
     }
 
 

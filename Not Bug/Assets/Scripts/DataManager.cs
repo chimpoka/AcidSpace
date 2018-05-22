@@ -17,8 +17,7 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetFloat("effectsVolume", Controller.Instance.GetComponent<AudioManager>().sourceEffects.volume);
         PlayerPrefs.SetFloat("musicVolume", Controller.Instance.GetComponent<AudioManager>().sourceMusic.volume);
         PlayerPrefs.SetInt("track", Controller.Instance.track);
-        PlayerPrefs.SetInt("firstPlayTouchscreen", Controller.firstPlayTouchscreen);
-        PlayerPrefs.SetInt("firstPlayAccelerometer", Controller.firstPlayAccelerometer);
+        PlayerPrefs.SetInt("showTutorialToggle", Controller.showTutorialToggle);
     }
 
     static public void Load()
@@ -34,8 +33,7 @@ public class DataManager : MonoBehaviour
         Controller.Instance.GetComponent<AudioManager>().sourceEffects.volume = PlayerPrefs.GetFloat("effectsVolume", 0.5f);
         Controller.Instance.GetComponent<AudioManager>().sourceMusic.volume = PlayerPrefs.GetFloat("musicVolume", 0.5f);
         Controller.Instance.track = PlayerPrefs.GetInt("track", 0);
-        Controller.firstPlayTouchscreen = PlayerPrefs.GetInt("firstPlayTouchscreen", 1);
-        Controller.firstPlayAccelerometer = PlayerPrefs.GetInt("firstPlayAccelerometer", 1);
+        Controller.showTutorialToggle = PlayerPrefs.GetInt("showTutorialToggle", 1);
     }
 
     static public void SaveNewGame()
@@ -51,8 +49,7 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetFloat("effectsVolume", 0.5f);
         PlayerPrefs.SetFloat("musicVolume", 0.5f);
         PlayerPrefs.SetInt("track", 0);
-        PlayerPrefs.SetInt("firstPlayTouchscreen", 1);
-        PlayerPrefs.SetInt("firstPlayAccelerometer", 1);
+        PlayerPrefs.SetInt("showTutorialToggle", 1);
     }
 
 }

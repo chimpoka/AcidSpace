@@ -24,7 +24,7 @@ public class Environment : MonoBehaviour {
 
         MeshRenderer[] obstacles = GameObject.Find("Obstacles").GetComponentsInChildren<MeshRenderer>();
         MeshRenderer[] walls = GameObject.Find("Walls").GetComponentsInChildren<MeshRenderer>();
-        MeshRenderer space = GameObject.Find("Space").GetComponent<MeshRenderer>();
+        MeshRenderer space = GameObject.Find("Space (1)").GetComponent<MeshRenderer>();
 
         meshes.Add(space);
         foreach (MeshRenderer o in obstacles)

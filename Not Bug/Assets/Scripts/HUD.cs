@@ -8,9 +8,11 @@ using TMPro;
 public class HUD : MonoBehaviour
 {
     public GameObject tapToStart;
+    public GameObject gameOverText;
     public GameObject congratulationsWindow;
     public Image pauseMenu;
     public Image endGameMenu;
+    public Image gameOverMenu;
     public TextMeshProUGUI score;
     public TextMeshProUGUI bestScore;
     public TextMeshProUGUI life;
@@ -42,28 +44,18 @@ public class HUD : MonoBehaviour
 
     private void Start()
     {
-        //if (Controller.moveControl == MoveControl.Touchscreen)
-        //{
-        //    bestScore.text = "BEST SCORE: " + Controller.bestScoreTouchscreen.ToString();
-        //    life.text = Controller.lifeTouchscreen.ToString();
-        //}
-        //else if (Controller.moveControl == MoveControl.Accelerometer)
-        //{
-        //    bestScore.text = "BEST SCORE: " + Controller.bestScoreAccelerometer.ToString();
-        //    life.text = Controller.lifeAccelerometer.ToString();
-        //}
-
         fading = gameObject.GetComponentInChildren<Fading>();
-        fading.FadeIn(fadingTime);
+        //fading.FadeIn(fadingTime);
+
+        if ((Controller.moveControl == MoveControl.Touchscreen && Controller.lifeTouchscreen == 5) ||
+            (Controller.moveControl == MoveControl.Accelerometer && Controller.lifeAccelerometer == 5))
+            Controller.showTutorial = Controller.showTutorialToggle;
+        else
+            Controller.showTutorial = 0;
 
         tutorial = GameObject.FindGameObjectWithTag("Player").GetComponent<Tutorial>();
 
-        //if (tutorial.IsTouchscreenTutorial() == true)
-        //    tutorial.FirstStartGameTouchscreen();
-        //else if (tutorial.IsAccelerometerTutorial() == true)
-        //    tutorial.FirstStartGameAccelerometer();
-        //else
-            StartGame();
+        StartGame();
     }
 
     public void SetScore(float value)
@@ -88,6 +80,17 @@ public class HUD : MonoBehaviour
                 }
             }
 
+            if (Controller.prepareToDie == true)
+            {
+                ShowGameOverText();
+                if (gameOverText.activeSelf == true && Input.GetMouseButton(0) && Input.mousePosition.y < Screen.height * 0.81)
+                {
+                    gameOverText.SetActive(false);
+                    Controller.prepareToDie = false;
+                    ShowGameOverMenu();
+                }
+            }
+
             if (Controller.gameMode == GameMode.Pause)
             {
                 tapToStart.SetActive(false);
@@ -99,29 +102,34 @@ public class HUD : MonoBehaviour
 
     private void StartGame()
     {
+        fading.FadeIn(fadingTime);
+
         pauseMenu.gameObject.SetActive(false);
         endGameMenu.gameObject.SetActive(false);
+        gameOverMenu.gameObject.SetActive(false);
 
         if (Controller.moveControl == MoveControl.Touchscreen)
         {
-            if (tutorial.IsTouchscreenTutorial())
-                tutorial.FirstStartGameTouchscreen();
             bestScore.text = "BEST SCORE: " + Controller.bestScoreTouchscreen.ToString();
             life.text = Controller.lifeTouchscreen.ToString();
+            if (Controller.lifeTouchscreen == 5)
+                Controller.showTutorial = Controller.showTutorialToggle;
         }
         else if (Controller.moveControl == MoveControl.Accelerometer)
         {
-            if (tutorial.IsAccelerometerTutorial())
-                tutorial.FirstStartGameAccelerometer();
             bestScore.text = "BEST SCORE: " + Controller.bestScoreAccelerometer.ToString();
             life.text = Controller.lifeAccelerometer.ToString();
+            if (Controller.lifeAccelerometer == 5)
+                Controller.showTutorial = Controller.showTutorialToggle;
         }
 
         Controller.gameMode = GameMode.Play;
         Controller.prepareToStartGame = true;
         GameObject.Find("ShipObject").GetComponent<RocketMobile>().PrepareToStartGame();
 
-        if (tutorial.IsTutorial() == false)
+        if (Controller.showTutorial == 1)
+            tutorial.StartTutorial();
+        else
             tapToStart.SetActive(true);
     }
 
@@ -155,13 +163,39 @@ public class HUD : MonoBehaviour
         Controller.gameMode = GameMode.Pause;
     }
 
+    public void ShowGameOverMenu()
+    {
+        gameOverMenu.gameObject.SetActive(true);
+        Controller.gameMode = GameMode.Pause;
+    }
+
+    public void ShowGameOverText()
+    {
+        TextMeshProUGUI[] texts = gameOverText.GetComponentsInChildren<TextMeshProUGUI>();
+        foreach (TextMeshProUGUI text in texts)
+        {
+            Debug.Log(text);
+            if (text.name == "Score")
+            {
+                if (Controller.moveControl == MoveControl.Touchscreen)
+                    text.text = "GREAT!\nYOUR BEST SCORE:\n" + Controller.bestScoreTouchscreen + " / 2000";
+                else if (Controller.moveControl == MoveControl.Accelerometer)
+                    text.text = "GREAT!\nYOUR BEST SCORE:\n" + Controller.bestScoreAccelerometer + " / 2000";
+            }
+        }
+
+        gameOverText.SetActive(true);
+    }
+
     public void onNewGameButtonClick()
     {
         Controller.Instance.startFromCheckpoint = false;
+
         if (Controller.moveControl == MoveControl.Touchscreen)
             Controller.lifeTouchscreen = 5;
         else if (Controller.moveControl == MoveControl.Accelerometer)
             Controller.lifeAccelerometer = 5;
+
         StartCoroutine("StartLevel");
     }
 
@@ -180,8 +214,8 @@ public class HUD : MonoBehaviour
     {
         fading.FadeOut(fadingTime);
         yield return new WaitForSeconds(fadingTime);
-        fading.FadeIn(fadingTime);
-        //GameObject.Find("ShipObject").GetComponent<RocketMobile>().StartGame();
+       // fading.FadeIn(fadingTime);
+
         StartGame();
     }
 

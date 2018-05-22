@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour
     static public GameMode gameMode;
     static public MoveControl moveControl;
     static public bool prepareToStartGame;
+    static public bool prepareToDie;
     static public int score;
     static public int bestScoreTouchscreen;
     static public int bestScoreAccelerometer;
@@ -17,12 +18,13 @@ public class Controller : MonoBehaviour
     static public int checkpointAccelerometer;
     static public int lifeTouchscreen = 5;
     static public int lifeAccelerometer = 5;
-    static public int firstPlayTouchscreen = 1;
-    static public int firstPlayAccelerometer = 1;
     static public int completedTouchscreen = 0;
     static public int completedAccelerometer = 0;
+    static public int showTutorialToggle = 1;
+    static public int showTutorial = 1;
     public bool startFromCheckpoint = true;
     public int track = 0;
+    
 
     private static Controller instance = null;
 
@@ -75,5 +77,6 @@ public class Controller : MonoBehaviour
     private void OnApplicationQuit()
     {
         DataManager.Save();
+        //DataManager.SaveNewGame();
     }
 }

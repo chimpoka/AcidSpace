@@ -112,7 +112,7 @@ public class RocketMobile : MonoBehaviour
             //    transform.position = new Vector3(startPosX, startPosY, transform.position.z);
             //#endif
             //#if !UNITY_EDITOR
-                transform.position = new Vector3(currentCheckPoint / checkPoint * checkPoint, startPosY, transform.position.z);
+                transform.position = new Vector3(currentCheckPoint /*/ checkPoint * checkPoint*/, startPosY, transform.position.z);
             //#endif
         }
         else
@@ -145,7 +145,7 @@ public class RocketMobile : MonoBehaviour
 
     private void CheckPoint()
     {
-        if (transform.position.x >= 2000)
+        if (Controller.score >= 2000)
         {
             if (Controller.moveControl == MoveControl.Touchscreen)
             {
@@ -165,11 +165,12 @@ public class RocketMobile : MonoBehaviour
             GetComponent<RocketEffects>().isRocketSlow = true;
             GetComponent<RocketEffects>().slowScore = Controller.score;
 
-            if (transform.position.x >= 2020)
+            if (Controller.score >= 2020)
                 HUD.Instance.ShowCongratulations();
         }
 
-        if ((Mathf.Floor(transform.position.x) % checkPoint == 0) && (transform.position.x != 0) && (checkPointDone == false))
+        if ((/*Mathf.Floor(transform.position.x)*/Controller.score % checkPoint == 0) 
+            && (transform.position.x != 0) && (checkPointDone == false))
         {
             checkPointDone = true;
 
@@ -182,8 +183,15 @@ public class RocketMobile : MonoBehaviour
 
             particleCheckpoint.Play();
             Controller.Instance.GetComponent<AudioManager>().PlaySound("CheckPoint");
+
+            currentCheckPoint = Controller.score;
+
+            if (Controller.moveControl == MoveControl.Touchscreen)
+                Controller.checkpointTouchscreen = Controller.score;
+            else if (Controller.moveControl == MoveControl.Accelerometer)
+                Controller.checkpointAccelerometer = Controller.score;
         }
-        else if (Mathf.Floor(transform.position.x) % checkPoint != 0)
+        else if (Controller.score % checkPoint != 0)
         {
             checkPointDone = false;
         }
@@ -194,6 +202,8 @@ public class RocketMobile : MonoBehaviour
         speed = 0;
         life--;
 
+        Controller.gameMode = GameMode.Pause;
+
         if (Controller.moveControl == MoveControl.Touchscreen)
         {
             if (life == 0)
@@ -203,7 +213,6 @@ public class RocketMobile : MonoBehaviour
             }
             else
             {
-                Controller.checkpointTouchscreen = Controller.score;
                 Controller.lifeTouchscreen = life;
             }
         }
@@ -216,7 +225,6 @@ public class RocketMobile : MonoBehaviour
             }
             else
             {
-                Controller.checkpointAccelerometer = Controller.score;
                 Controller.lifeAccelerometer = life;
             }
         }
@@ -244,14 +252,15 @@ public class RocketMobile : MonoBehaviour
                 Social.ReportScore(Controller.bestScoreAccelerometer, SpaceOceanResources.leaderboard_accelerometer, (bool success) => { });
             }
         }
-            
-
+           
         particleExplosion.Play();
         Controller.Instance.GetComponent<AudioManager>().PlaySound("Explosion");
         GetComponent<RocketEffects>().isRocketInvulnerable = false;
 
-        HUD.Instance.ShowEndGameMenu();
-        Controller.gameMode = GameMode.Pause;
+        if (life == 0)
+            Controller.prepareToDie = true;
+        else
+            HUD.Instance.ShowEndGameMenu();
     }
 
 
