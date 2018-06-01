@@ -35,17 +35,18 @@ public class HUD : MonoBehaviour
 
     private void Awake()
     {
-        //If there is already an instance of this class, then remove
-        if (instance) { DestroyImmediate(this); return; }
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        //Assign this instance as singleton
         instance = this;
     }
 
     private void Start()
     {
         fading = gameObject.GetComponentInChildren<Fading>();
-        //fading.FadeIn(fadingTime);
 
         if ((Controller.moveControl == MoveControl.Touchscreen && Controller.lifeTouchscreen == 5) ||
             (Controller.moveControl == MoveControl.Accelerometer && Controller.lifeAccelerometer == 5))
@@ -178,9 +179,9 @@ public class HUD : MonoBehaviour
             if (text.name == "Score")
             {
                 if (Controller.moveControl == MoveControl.Touchscreen)
-                    text.text = "GREAT!\nYOUR BEST SCORE:\n" + Controller.bestScoreTouchscreen + " / 2000";
+                    text.text = "GREAT!\nYOUR SCORE:\n" + Controller.currentScoreTouchscreen;
                 else if (Controller.moveControl == MoveControl.Accelerometer)
-                    text.text = "GREAT!\nYOUR BEST SCORE:\n" + Controller.bestScoreAccelerometer + " / 2000";
+                    text.text = "GREAT!\nYOUR SCORE:\n" + Controller.currentScoreAccelerometer;
             }
         }
 

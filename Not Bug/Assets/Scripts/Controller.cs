@@ -14,6 +14,8 @@ public class Controller : MonoBehaviour
     static public int score;
     static public int bestScoreTouchscreen;
     static public int bestScoreAccelerometer;
+    static public int currentScoreTouchscreen;
+    static public int currentScoreAccelerometer;
     static public int checkpointTouchscreen;
     static public int checkpointAccelerometer;
     static public int lifeTouchscreen = 5;

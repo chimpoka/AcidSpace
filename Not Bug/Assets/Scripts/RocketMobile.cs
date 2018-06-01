@@ -12,8 +12,6 @@ public class RocketMobile : MonoBehaviour
     public float startPosY = 8.2f;
     public float maxAngle = 45f;
     public int checkPoint = 200;
-   
-
 
     [Header("TouchPad Movement Settings")]
     public float rotationTime = 2f;
@@ -24,7 +22,6 @@ public class RocketMobile : MonoBehaviour
 
     //[Header("Debug")]
     //public float startPosX;
- 
 
     private int changeEnvironment = 100;
     private bool checkPointDone = false;
@@ -41,8 +38,6 @@ public class RocketMobile : MonoBehaviour
 
     void Start()
     {
-       // StartGame();
-
         changeEnvironment = GameObject.Find("Environment").GetComponent<Environment>().changeEnvironmentPoint;
     }
 
@@ -98,22 +93,21 @@ public class RocketMobile : MonoBehaviour
             bestScore = Controller.bestScoreTouchscreen;
             currentCheckPoint = Controller.checkpointTouchscreen;
             life = Controller.lifeTouchscreen;
+            if (life == 5)
+                Controller.currentScoreTouchscreen = 0;
         }
         else if (Controller.moveControl == MoveControl.Accelerometer)
         {
             bestScore = Controller.bestScoreAccelerometer;
             currentCheckPoint = Controller.checkpointAccelerometer;
             life = Controller.lifeAccelerometer;
+            if (life == 5)
+                Controller.currentScoreAccelerometer = 0;
         }
 
         if (Controller.Instance.startFromCheckpoint == true)
         {
-            //#if UNITY_EDITOR
-            //    transform.position = new Vector3(startPosX, startPosY, transform.position.z);
-            //#endif
-            //#if !UNITY_EDITOR
-                transform.position = new Vector3(currentCheckPoint /*/ checkPoint * checkPoint*/, startPosY, transform.position.z);
-            //#endif
+            transform.position = new Vector3(currentCheckPoint, startPosY, transform.position.z);
         }
         else
             transform.position = new Vector3(0, startPosY, transform.position.z);
@@ -169,7 +163,7 @@ public class RocketMobile : MonoBehaviour
                 HUD.Instance.ShowCongratulations();
         }
 
-        if ((/*Mathf.Floor(transform.position.x)*/Controller.score % checkPoint == 0) 
+        if ((Controller.score % checkPoint == 0) 
             && (transform.position.x != 0) && (checkPointDone == false))
         {
             checkPointDone = true;
@@ -206,6 +200,9 @@ public class RocketMobile : MonoBehaviour
 
         if (Controller.moveControl == MoveControl.Touchscreen)
         {
+            if (Controller.currentScoreTouchscreen < Controller.score)
+                Controller.currentScoreTouchscreen = Controller.score;
+
             if (life == 0)
             {
                 Controller.checkpointTouchscreen = 0;
@@ -215,9 +212,14 @@ public class RocketMobile : MonoBehaviour
             {
                 Controller.lifeTouchscreen = life;
             }
+
+    
         }
         else if (Controller.moveControl == MoveControl.Accelerometer)
         {
+            if (Controller.currentScoreAccelerometer < Controller.score)
+                Controller.currentScoreAccelerometer = Controller.score;
+
             if (life == 0)
             {
                 Controller.checkpointAccelerometer = 0;
@@ -226,7 +228,7 @@ public class RocketMobile : MonoBehaviour
             else
             {
                 Controller.lifeAccelerometer = life;
-            }
+            }           
         }
 
         Transform[] transforms = gameObject.GetComponentsInChildren<Transform>();

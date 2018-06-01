@@ -8,6 +8,8 @@ public class DataManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("bestScoreTouchscreen", Controller.bestScoreTouchscreen);
         PlayerPrefs.SetInt("bestScoreAccelerometer", Controller.bestScoreAccelerometer);
+        PlayerPrefs.SetInt("currentScoreTouchscreen", Controller.currentScoreTouchscreen);
+        PlayerPrefs.SetInt("currentScoreAccelerometer", Controller.currentScoreAccelerometer);
         PlayerPrefs.SetInt("checkpointTouchscreen", Controller.checkpointTouchscreen);
         PlayerPrefs.SetInt("checkpointAccelerometer", Controller.checkpointAccelerometer);
         PlayerPrefs.SetInt("lifeTouchscreen", Controller.lifeTouchscreen);
@@ -24,6 +26,8 @@ public class DataManager : MonoBehaviour
     {
         Controller.bestScoreTouchscreen = PlayerPrefs.GetInt("bestScoreTouchscreen", 0);
         Controller.bestScoreAccelerometer = PlayerPrefs.GetInt("bestScoreAccelerometer", 0);
+        Controller.currentScoreTouchscreen = PlayerPrefs.GetInt("currentScoreTouchscreen", 0);
+        Controller.currentScoreAccelerometer = PlayerPrefs.GetInt("currentScoreAccelerometer", 0);
         Controller.checkpointTouchscreen = PlayerPrefs.GetInt("checkpointTouchscreen", 0);
         Controller.checkpointAccelerometer = PlayerPrefs.GetInt("checkpointAccelerometer", 0);
         Controller.lifeTouchscreen = PlayerPrefs.GetInt("lifeTouchscreen", 5);
@@ -40,6 +44,8 @@ public class DataManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("bestScoreTouchscreen", 0);
         PlayerPrefs.SetInt("bestScoreAccelerometer", 0);
+        PlayerPrefs.SetInt("currentScoreTouchscreen", 0);
+        PlayerPrefs.SetInt("currentScoreAccelerometer", 0);
         PlayerPrefs.SetInt("checkpointTouchscreen", 0);
         PlayerPrefs.SetInt("checkpointAccelerometer", 0);
         PlayerPrefs.SetInt("lifeTouchscreen", 5);

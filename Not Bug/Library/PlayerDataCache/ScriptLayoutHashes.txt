@@ -210,7 +210,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 e7ec17895ab32b61ba574a2677295077 Assembly-CSharp.dll:.EffectController
-065f2eabd5dbdce7f427e6a482d2d449 Assembly-CSharp.dll:.HUD
+6e52d6eb1574165ed6a9dbbddf230af9 Assembly-CSharp.dll:.HUD
 62229a3e4d53ca59bec192e89627ed52 Assembly-CSharp.dll:TMPro.Examples.CameraController
 70bee46b64394410801eb2b3bba0d255 Assembly-CSharp.dll:.Environment
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
